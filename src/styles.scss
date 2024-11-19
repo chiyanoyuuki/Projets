@@ -1,11 +1,33 @@
 body
 {
     background: #202020;
+    overflow:hidden;
+    margin:2vh 2vw;
 }
-.container
+.page
 {
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
+    height:80vh;
+}
+.container{
+    width:40%;
+}
+.disabled{
+    pointer-events: none!important;
+}
+.right{
+    width:60%;
+    height: fit-content;
+    margin: auto;
+    transition:0.5s;
+}
+.right img{
+    width: -moz-available;
+    transition:0.5s;
+    border: 10px ridge #606060;
+    filter: drop-shadow(5px 5px 10px black) drop-shadow(5px 5px 10px black);
+    max-height:90vh;
 }
 p, a
 {
