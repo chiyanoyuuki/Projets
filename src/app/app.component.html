@@ -1,12 +1,19 @@
-<div class="container">
-  <div class="links">
-    <p class="title">Projets :</p>
-    <div *ngFor="let proj of projets"><a (mouseenter)="focused=proj" href="https://chiyanoyuuki.github.io/{{proj.link}}/">{{proj.nom}}</a></div>
-    <div>
-      <div class="desc">
-        <p class="title">{{focused.nom}}</p>
-        <p>{{focused.desc}}</p>
+<div class="page">
+  <div class="container">
+    <div class="links">
+      <p class="title">Projets :</p>
+      <div *ngFor="let proj of projets"><a [style.color]="proj.link=='none'?'#808080':'white'" (mouseenter)="focused=proj;startInterval()" href="{{proj.link=='none'?'#':'https://chiyanoyuuki.github.io/'+proj.link}}/">{{proj.nom}}</a></div>
+      <div>
+        <div class="desc">
+          <p class="title">{{focused.nom}}</p>
+          <p [innerHTML]="focused.desc"></p>
+        </div>
       </div>
     </div>
+    <p class="warning">La base de données n'étant plus d'actualité, certaines applications ou fonctionnalités peuvent ne pas être disponibles.</p>
+  </div>
+
+  <div class="right">
+    <img src="../assets/{{focused.alias}}/{{img}}.png" />
   </div>
 </div>
